@@ -31,12 +31,12 @@ public class CardTester {
             
             /**** CARD 3 ****/
             System.out.println("\nCard 3 TESTS!!!");
-            Card z = new Card("Dominic", "diMichelle", 69);
+            Card z = new Card("Dominic", "diMichelle", 70);
             System.out.println("My card is ranked:" + z.rank());
             System.out.println("My card has the suit:" + z.suit());
             System.out.println("My card has a value:" + z.pointValue());
             System.out.println(z);
-            System.out.println("This should be true:" + x.matches(z));
+            System.out.println("This should be false:" + x.matches(z));
             
 	}
 }
