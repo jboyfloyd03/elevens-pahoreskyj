@@ -41,7 +41,6 @@ public class Deck {
             }
 	}
         // initialize the size vaRIABLES
-        this.size = cards.size();
         shuffle();
     } // close constructor
 
@@ -71,14 +70,16 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+                this.size = cards.size();
                 Card temp;
                 // make a temo array of the same length
                 for(int k = cards.size()-1; k >= 0; k--){
                     int pos = (int)(Math.random() * ( k + 1 ));
                     temp = cards.get(k);
-                    cards.set(pos, cards.get(k));
-                    cards.set(k, temp);
+                    cards.set(k, cards.get(pos));
+                    cards.set(pos, temp);
                 }
+                
 	}
 
 	/**
@@ -131,4 +132,5 @@ public class Deck {
 		rtn = rtn + "\n";
 		return rtn;
 	}
+        
 }

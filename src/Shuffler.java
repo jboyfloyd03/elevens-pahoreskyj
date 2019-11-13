@@ -71,7 +71,7 @@ public class Shuffler {
                 unshuffle += 2;
             }
             //reset our unshuffled counter to 1 (instead of 0)	
-            int unshuffle -= (mid * 2) + 1;
+//            int unshuffle -= (mid * 2) + 1;
             //another loop: from where k left off to the end
             for(k = mid; k <= values.length; ){
             //same as before	
@@ -79,6 +79,7 @@ public class Shuffler {
                 unshuffle += 2;
             // Copy elements back to original array
 	}
+        }
 
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
@@ -91,11 +92,13 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+        public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-                for(int k = values.length; k >= 0; k--){
+                for(int k = values.length - 1; k > 0; k--){
                     int pos = (int)(Math.random() * (k + 1));
-                    
+                    int temp = values[pos];
+                    values[pos] = values[k];
+                    values[k] = temp;
                 }
 	}
 }
